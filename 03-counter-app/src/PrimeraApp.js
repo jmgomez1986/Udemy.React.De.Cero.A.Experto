@@ -2,13 +2,17 @@
 import React from 'react';
 
 const PrimeraApp = () => {
+
+	const saludo = 'Hola Mundo!!!';
+	const objeto = {
+		nombre: 'Matias',
+		edad: 34,
+	};
+
 	return (
-		// <Fragment>
-		// 	<h1>Hola Mundo!!!</h1>
-		// 	<p>Mi primera App</p>
-		// </Fragment>
 		<>
-			<h1>Hola Mundo!!!</h1>
+			<h1> { saludo } </h1>
+			{/* <pre> { JSON.stringify(objeto, null, 3) } </pre> */}
 			<p>Mi primera App</p>
 		</>
 	);
