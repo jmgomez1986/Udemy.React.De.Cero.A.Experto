@@ -1,16 +1,17 @@
 // import React, { Fragment } from 'react';
 import React from 'react';
 
-const PrimeraApp = () => {
+const PrimeraApp = ( {saludo} ) => {
 
-	const saludo = 'Hola Mundo!!!';
-	const objeto = {
-		nombre: 'Matias',
-		edad: 34,
-	};
+		// const saludo = 'Hola Mundo!!!';
+	// const objeto = {
+	// 	nombre: 'Matias',
+	// 	edad: 34,
+	// };
 
 	return (
 		<>
+			{/* <h1> { saludo } </h1> */}
 			<h1> { saludo } </h1>
 			{/* <pre> { JSON.stringify(objeto, null, 3) } </pre> */}
 			<p>Mi primera App</p>
