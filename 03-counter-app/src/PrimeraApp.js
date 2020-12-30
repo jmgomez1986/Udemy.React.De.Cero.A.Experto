@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-const PrimeraApp = ( {saludo} ) => {
+const PrimeraApp = ( {saludo, subtitulo} ) => {
 
 		// const saludo = 'Hola Mundo!!!';
 	// const objeto = {
@@ -15,7 +15,7 @@ const PrimeraApp = ( {saludo} ) => {
 			{/* <h1> { saludo } </h1> */}
 			<h1> { saludo } </h1>
 			{/* <pre> { JSON.stringify(objeto, null, 3) } </pre> */}
-			<p>Mi primera App</p>
+			<p> { subtitulo } </p>
 		</>
 	);
 };
@@ -23,6 +23,10 @@ const PrimeraApp = ( {saludo} ) => {
 // Con los propTypes obligamos a que cuando se use el componente se envie la propiedad
 PrimeraApp.propTypes = {
 	saludo: PropTypes.string.isRequired
+}
+
+PrimeraApp.defaultProps = {
+	subtitulo: 'Mi primera App'
 }
 
 export default PrimeraApp;
