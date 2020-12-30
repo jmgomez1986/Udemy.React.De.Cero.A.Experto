@@ -1,5 +1,6 @@
 // import React, { Fragment } from 'react';
 import React from 'react';
+import PropTypes from 'prop-types'
 
 const PrimeraApp = ( {saludo} ) => {
 
@@ -18,5 +19,10 @@ const PrimeraApp = ( {saludo} ) => {
 		</>
 	);
 };
+
+// Con los propTypes obligamos a que cuando se use el componente se envie la propiedad
+PrimeraApp.propTypes = {
+	saludo: PropTypes.string.isRequired
+}
 
 export default PrimeraApp;
