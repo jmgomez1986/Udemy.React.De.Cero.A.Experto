@@ -5,6 +5,12 @@ body {
 	font-size: 1.3rem;
 	font-family: Helvetica, Arial, sans-serif;
 	padding: 70px;
+	text-align: center;
+}
+
+h2 {
+	font-size: 100px;
+	margin: 70px;
 }
 
 button {
