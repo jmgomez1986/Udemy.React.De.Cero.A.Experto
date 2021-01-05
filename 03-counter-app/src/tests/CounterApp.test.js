@@ -34,12 +34,28 @@ describe('Prueba en <CounterApp />', () => {
 	});
 
 	test('debe decrementar contador con el boton -1 ', () => {
-		const btn1 = wrapper.find('button').at(2);
+		const btn3 = wrapper.find('button').at(2);
 
-		btn1.simulate('click');
+		btn3.simulate('click');
 
 		const counterText = wrapper.find('h2').text().trim();
 
 		expect(counterText).toBe('9');
 	});
+
+	test('debe colocar el valor por defecto con el boton Reset ', () => {
+		
+		const wrapper = shallow(<CounterApp value={105} />);
+
+		wrapper.find('button').at(0).simulate('click'); // 106
+		wrapper.find('button').at(0).simulate('click'); // 107
+
+		wrapper.find('button').at(1).simulate('click'); // 105
+
+		const counterText = wrapper.find('h2').text().trim();
+
+		expect(counterText).toBe('105');
+
+	});
+	
 });
