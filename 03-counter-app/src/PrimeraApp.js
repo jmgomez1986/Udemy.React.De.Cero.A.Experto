@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const PrimeraApp = ( {saludo, subtitulo} ) => {
 
-		// const saludo = 'Hola Mundo!!!';
+	// const saludo = 'Hola Mundo!!!';
 	// const objeto = {
 	// 	nombre: 'Matias',
 	// 	edad: 34,
@@ -26,7 +26,7 @@ PrimeraApp.propTypes = {
 }
 
 PrimeraApp.defaultProps = {
-	subtitulo: 'Mi primera App'
+	subtitulo: 'Esto es un subtítulo!!!'
 }
 
 export default PrimeraApp;
