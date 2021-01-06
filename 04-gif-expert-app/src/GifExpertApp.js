@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { AddCategory } from './components/AddCategory';
+import { GiftGrid } from './components/GiftGrid';
 
 const GifExpertApp = () => {
 	// const categorias = [ 'One Punch', 'Samurai X', 'Dragon Ball'];
-	const [categorias, setCategorias] = useState([ 'One Punch', 'Samurai X', 'Dragon Ball']);
+	const [categorias, setCategorias] = useState(['One Punch']);
 
 	// const handleAdd = () => {
 	// 	// setCategorias([...categorias, 'Nueva Categoria']);
 	// 	setCategorias(categories => [...categories, 'Nueva Categoria']);
 	// };
 
-	return ( 
+	return (
 		<>
 			<h2>GifExpertApp!!!</h2>
-			<AddCategory setCategorias={setCategorias}/>
+			<AddCategory setCategorias={setCategorias} />
 
 			<hr />
 
@@ -21,13 +22,16 @@ const GifExpertApp = () => {
 
 			<ul>
 				{
-					categorias.map(categoria => {
-						return <li key={categoria}>{categoria}</li>
-					})
+				categorias.map((category) => (
+					<GiftGrid
+						key={category}
+						category={category}
+					/>
+				))
 				}
 			</ul>
 		</>
-	 );
-}
- 
+	);
+};
+
 export default GifExpertApp;
