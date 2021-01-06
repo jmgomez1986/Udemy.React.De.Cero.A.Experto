@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const GiftGrid = ({category}) => {
+
+	const [counter, setCounter] = useState(0);
+
+	useEffect(() => {
+		getGifs();
+	}, []); // Al mandar la lista  de dependencias vacia, se ejecta solo en la primera renderizacion
 
 	const getGifs = async () => {
 		const url = `https://api.giphy.com/v1/gifs/search?q=goku&limit=10&api_key=5Aur2asApFfGBynHWjHEVbAzIUjLAKK5`
@@ -18,11 +24,11 @@ export const GiftGrid = ({category}) => {
 		console.log(gifs);
 	}
 
-	getGifs();
-
 	return (
 		<div>
 			<h3>{category}</h3>
+			<h1>{counter}</h1>
+			<button onClick={ () => setCounter(counter + 1) }></button>
 		</div>
 	)
 }
