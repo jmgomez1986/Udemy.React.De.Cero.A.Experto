@@ -4,16 +4,12 @@ exports[`Prueba en componente <GifGridItem /> debe de mostrar el componente corr
 <div
   className="card animate__animated animate__fadeIn"
 >
-  <img />
-  <p />
-</div>
-`;
-
-exports[`Prueba en componente GifGridItem debe de mostrar el componente correctamente  1`] = `
-<div
-  className="card animate__animated animate__fadeIn"
->
-  <img />
-  <p />
+  <img
+    alt="Un titulo"
+    src="https://localhost/algo.jpg"
+  />
+  <p>
+    Un titulo
+  </p>
 </div>
 `;
