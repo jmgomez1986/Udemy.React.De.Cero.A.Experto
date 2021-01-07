@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { GifGridItem } from '../../components/GifGridItem';
 
-describe('Prueba en componente <GifGridItem />', () => {	
+describe('Pruebas en componente <GifGridItem />', () => {	
 	const title = 'Un titulo';
 	const url = 'https://localhost/algo.jpg';
 	const wrapper = shallow(
@@ -12,7 +12,7 @@ describe('Prueba en componente <GifGridItem />', () => {
 		/>);
 
 	test('debe de mostrar el componente correctamente ', () => {
-			expect(wrapper).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	test('debe de tener un parrafo con el titulo ', () => {
