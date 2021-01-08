@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pruevas en el componente <AddCategory /> debe de mostrarse el componente <AddCategoy /> correctamente  1`] = `
+exports[`Pruebas en el componente <AddCategory /> debe de mostrarse el componente <AddCategoy /> correctamente  1`] = `
 <form
   onSubmit={[Function]}
 >
