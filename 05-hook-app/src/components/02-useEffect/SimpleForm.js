@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Message } from './Message';
 
 import './effects.css';
 
@@ -11,17 +12,17 @@ export const SimpleForm = () => {
 	const { name, email } = formState;
 
 	useEffect(() => {
-		console.log('Hola!!!');
+		// console.log('Hola!!!');
 	}, []);
 	// Si no se pone el arreglo de dependencias, el efecto se dispara cada vez que se renderiza,
 	// al mandarlo vacio, se ejecuta solo la primera vez
 
 	useEffect(() => {
-		console.log('formState cambió');
+		// console.log('formState cambió');
 	}, [formState]);
 
 	useEffect(() => {
-		console.log('email cambió');
+		// console.log('email cambió');
 	}, [email]);
 
 	// Con el useEffect se puede escuchar una parte especifica del componente
@@ -62,6 +63,9 @@ export const SimpleForm = () => {
 					onChange={handleInputChange}
 				/>
 			</div>
+
+			{name === '123' && <Message />}
+
 		</>
 	);
 };
