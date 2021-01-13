@@ -16,9 +16,7 @@ export const TodoApp = () => {
 	});
 
 	useEffect(() => {
-		
 		localStorage.setItem('todos', JSON.stringify(todos));
-
 	}, [todos]);
 
 	const handleSubmit = (e) => {
@@ -53,7 +51,14 @@ export const TodoApp = () => {
 		};
 
 		dispatch(action);
-	}
+	};
+
+	const handleToggle = (todoId) => {
+		dispatch({
+			type: 'toggle',
+			payload: todoId,
+		});
+	};
 
 	return (
 		<div>
@@ -66,7 +71,10 @@ export const TodoApp = () => {
 						{todos.map((todo, i) => {
 							return (
 								<li key={todo.id} className='list-group-item'>
-									<p className='text-center'>
+									<p
+										className={`text-center ${todo.done && 'complete'}`}
+										onClick={() => handleToggle(todo.id)}
+									>
 										{i + 1}. {todo.desc}
 									</p>
 									<button
