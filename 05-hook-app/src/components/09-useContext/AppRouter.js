@@ -20,6 +20,8 @@ export const AppRouter = () => {
 
 				<NavBar />
 
+				<div className="container">
+
 				<Switch>
 
 					<Route exact path='/' component={HomeScreen} />
@@ -29,6 +31,8 @@ export const AppRouter = () => {
 					<Redirect to='/' /> 
 
 				</Switch>
+
+				</div>
 
 			</div>
 
