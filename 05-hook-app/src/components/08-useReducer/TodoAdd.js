@@ -22,7 +22,6 @@ export const TodoAdd = ({ handleAddTodo }) => {
 			done: false,
 		};
 
-
 		handleAddTodo(newTodo);
 		reset();
 	};
