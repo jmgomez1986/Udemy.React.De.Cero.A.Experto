@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './styles.css';
 
-export const TodoItem = ({ todo, index, handleDelete, handleToggle }) => {
+export const TodoListItem = ({ todo, index, handleDelete, handleToggle }) => {
 	return (
 		<li className='list-group-item'>
 			<p
@@ -19,7 +19,7 @@ export const TodoItem = ({ todo, index, handleDelete, handleToggle }) => {
 	);
 };
 
-TodoItem.propTypes = {
+TodoListItem.propTypes = {
 	todo: PropTypes.object.isRequired,
 	handleDelete: PropTypes.func.isRequired,
 	handleToggle: PropTypes.func.isRequired,
