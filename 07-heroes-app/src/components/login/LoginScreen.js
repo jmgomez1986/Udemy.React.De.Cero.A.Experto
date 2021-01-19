@@ -5,6 +5,8 @@ import { types } from '../../types/types';
 export const LoginScreen = ({ history }) => {
 	const { dispatch } = useContext(AuthContext);
 
+	const lastPath = localStorage.getItem('lastPath') || '/';
+
 	const handleLogin = () => {
 		// history.push('/');
 		dispatch({
@@ -14,8 +16,8 @@ export const LoginScreen = ({ history }) => {
 				email: 'jmgametal@gmail.com',
 			},
 		});
-		
-		history.replace('/');
+
+		history.replace(lastPath);
 	};
 
 	return (
