@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import {
   BrowserRouter as Router,
-  Switch,
-  Route
+  Switch
 } from "react-router-dom";
 import { AuthContext } from '../auth/AuthContext';
 import { LoginScreen } from '../components/login/LoginScreen';
 import { DashboardRoutes } from './DashboardRoutes';
-import { PrivateRoutes } from './PrivateRoutes';
+import { PrivateRoute } from './PrivateRoute';
+import { PublicRoute } from './PublicRoute';
 
 export const AppRouter = () => {
 
@@ -19,13 +19,21 @@ export const AppRouter = () => {
       <div>
 
         <Switch>
-          <Route exact path="/login" component={LoginScreen}/>
-					<PrivateRoutes
+          <PublicRoute
+            isAuthenticated={logged}
+            component={LoginScreen}
+            exact
+            path="/login"
+          />
+
+					<PrivateRoute
             isAuthenticated={logged}
             component={DashboardRoutes}
             path="/"
           />
+
         </Switch>
+
       </div>
     </Router>
 
