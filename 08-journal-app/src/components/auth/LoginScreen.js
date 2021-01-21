@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
-import { startLoginEmailPassword } from '../../actions/auth';
+import { StartGoogleLogin, startLoginEmailPassword } from '../../actions/auth';
 
 import { useForm } from '../../hooks/useForm';
 
@@ -20,6 +20,10 @@ const dispatch = useDispatch();
 		e.preventDefault();
 		
 		dispatch(startLoginEmailPassword(email, password));
+	};
+
+	const handleGoogleLogin = () => {
+		dispatch(StartGoogleLogin());
 	};
 
 	return (
@@ -53,7 +57,7 @@ const dispatch = useDispatch();
 				<div className='auth__social-networks'>
 					<p>Login with social networks</p>
 
-					<div className='google-btn'>
+					<div className='google-btn' onClick={handleGoogleLogin}>
 						<div className='google-icon-wrapper'>
 							<img
 								className='google-icon'
