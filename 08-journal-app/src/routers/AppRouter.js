@@ -32,7 +32,7 @@ export const AppRouter = () => {
 	}, [dispatch, setChecking]);
 
 	if (checking) {
-		return <h1>Espere...</h1>;
+		return <h1>Wait...</h1>;
 	}
 
 	return (
