@@ -10,7 +10,7 @@ export const notesReducer = (state = initialState, action) => {
 		case types.notesActive:
 			return {
 				...state,
-				active: {
+				noteActive: {
 					...action.payload,
 				},
 			};
