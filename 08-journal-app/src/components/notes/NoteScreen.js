@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useForm } from '../../hooks/useForm';
 import { NotesAppBar } from './NotesAppBar';
@@ -6,10 +6,16 @@ import { NotesAppBar } from './NotesAppBar';
 export const NoteScreen = () => {
 
 	const {noteActive} = useSelector( state => state.notes );
-
-	const [formValues, handleInputChange] = useForm(noteActive);
-
+	const [formValues, handleInputChange, reset] = useForm(noteActive);
 	const {title, body, url} = formValues;
+	const activeId = useRef(noteActive.id);
+
+	useEffect(() => {
+		if (noteActive.id !== activeId.current) {
+			reset(noteActive);
+			activeId.current = noteActive.id;
+		}
+	}, [noteActive, reset]);
 
 	return (
 		<div className='notes__main-content'>
