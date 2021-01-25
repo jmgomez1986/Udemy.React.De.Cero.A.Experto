@@ -9,13 +9,21 @@ export const NoteScreen = () => {
 	const {noteActive} = useSelector( state => state.notes );
 	const dispatch = useDispatch();
 	const [formValues, handleInputChange, reset] = useForm(noteActive);
-	const {title, body, url} = formValues;
+	const {title, body} = formValues;
 	const activeId = useRef(noteActive.id);
+	const activeURL = useRef(noteActive.URL);
 
 	useEffect(() => {
 		if (noteActive.id !== activeId.current) {
 			reset(noteActive);
 			activeId.current = noteActive.id;
+		}
+	}, [noteActive, reset]);
+
+	useEffect(() => {
+		if (noteActive.url !== activeURL.current) {
+			reset(noteActive);
+			activeURL.current = noteActive.url;
 		}
 	}, [noteActive, reset]);
 
@@ -47,10 +55,10 @@ export const NoteScreen = () => {
 				></textarea>
 
 				{
-					url &&
+					noteActive.url &&
 					<div className='notes__image'>
 						<img
-							src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg'
+							src={noteActive.url}
 							alt='imagen'
 						/>
 					</div>
