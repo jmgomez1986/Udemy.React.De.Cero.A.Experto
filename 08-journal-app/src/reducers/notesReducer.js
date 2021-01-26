@@ -2,7 +2,7 @@ import { types } from '../types/types';
 
 const initialState = {
 	notes: [],
-	active: null,
+	noteActive: null,
 };
 
 export const notesReducer = (state = initialState, action) => {
@@ -13,6 +13,11 @@ export const notesReducer = (state = initialState, action) => {
 				noteActive: {
 					...action.payload,
 				},
+			};
+		case types.notesAddNew:
+			return {
+				...state,
+				notes: [action.payload, ...state.notes],
 			};
 		case types.notesLoad:
 			return {
@@ -30,7 +35,13 @@ export const notesReducer = (state = initialState, action) => {
 			return {
 				...state,
 				noteActive: null,
-				notes: state.notes.filter(note => note.id !== action.payload)
+				notes: state.notes.filter((note) => note.id !== action.payload),
+			};
+		case types.notesLogoutCleaning:
+			return {
+				...state,
+				noteActive: null,
+				notes: [],
 			};
 		default:
 			return state;
