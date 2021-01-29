@@ -11,7 +11,24 @@ const firebaseConfig = {
 	appId: '1:746320917273:web:a6ec2152d162d8a3ebcb88',
 };
 
-firebase.initializeApp(firebaseConfig);
+const firebaseConfigTesting = {
+	apiKey: "AIzaSyBVtzvmRVbVfwco1-9-4Ky1Kn11wPiUYbo",
+	authDomain: "fir-demo-56c62.firebaseapp.com",
+	databaseURL: "https://fir-demo-56c62.firebaseio.com",
+	projectId: "fir-demo-56c62",
+	storageBucket: "fir-demo-56c62.appspot.com",
+	messagingSenderId: "644174088796",
+	appId: "1:644174088796:web:9678a3fc378f7bae2ff499"
+};
+
+if (process.env.NODE_ENV === 'test') {
+	// testing
+	firebase.initializeApp(firebaseConfigTesting);
+} else {
+	// dev/prod
+	firebase.initializeApp(firebaseConfig);
+}
+
 
 const db = firebase.firestore();
 
